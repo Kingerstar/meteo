@@ -16,5 +16,5 @@ To use Chill Weather, simply open the application in your web browser, enter a c
 
 - Background music by Pixabay
 - Icons by [cdnjs]([link-to-icon](https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css))
-- Weather data provided by https://openweathermap.org/api and Images
+- Weather data provided by https://openweathermap.org/api
 - Image provided by https://unsplash.com/developers
