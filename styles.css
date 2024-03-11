@@ -1,27 +1,5 @@
 #img {
     background-image: url('assets/basecity.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat
-  }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-header {
-    padding:1em;
-    background-color:rgba(255, 255, 255, 0.7);
-    border-radius: 5%;
-    text-align: center;
-    color:rgba(29, 15, 15, 0.751) ;
-    box-shadow: 1px -3px 15px 5px #FFCBAB;
-}
-header:hover {
-    box-shadow: 1px -3px 25px 10px #FFCBAB; /* Nouveau style du box-shadow au survol */
-}
-
-#img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,21 +8,38 @@ header:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
-
-
+header {
+    padding:1em;
+    margin:2em;
+    background-color:rgba(255, 255, 255, 0.7);
+    border-radius: 5%;
+    text-align: center;
+    color:rgba(29, 15, 15, 0.751) ;
+    box-shadow: 1px -3px 15px 5px #FFCBAB;
+    transition: box-shadow 0.3s ease;
+}
+header:hover {
+    box-shadow: 1px -3px 15px 5px #8C9DFF;
+    
+}
 #country {
-    font-size: 20px;
+    font-size: 2em;
 }
 
 h1 {
-    font-size: 36px;
-    margin: 10px 0;
+    font-size: 2em;
+    margin: 0.7em 0;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1em;
 }
 
 main {
@@ -52,33 +47,13 @@ main {
     flex-direction: column;
     align-items: center;
 }
-
-.weather-card {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.weather-card{
+    background-color:rgba(255, 255, 255, 0.7);
+    margin:1em;
+    padding:1em;
 }
 
-.temperature {
-    font-size: 24px;
-    text-align: center;
-}
 
-.humidity {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-input[type="text"],
-button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-}
 
 @media only screen and (max-width: 600px) {
     h1 {

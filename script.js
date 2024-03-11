@@ -31,15 +31,15 @@ fetch(apiCoordinates)
     return response.json();
   })
   .then(weatherData => {
-    document.getElementById("descr").textContent = weatherData.weather[0].description ;
+    document.getElementById("descr").textContent = weatherData.weather[0].description.charAt(0).toUpperCase() + weatherData.weather[0].description.slice(1);  ;
     document.getElementById("temperature").textContent =  weatherData.main.temp + " °C" ;
     document.getElementById("country").textContent = weatherData.sys.country ;
-    document.getElementById("temp-max").textContent = "Today max's temperature" + weatherData.main.temp_max + " °C" ;
-    document.getElementById("temp-min").textContent=  "Today min's temperature" + weatherData.main.temp_min + " °C";
+    document.getElementById("temp-max").textContent = "Today max's temperature: " + weatherData.main.temp_max + " °C" ;
+    document.getElementById("temp-min").textContent=  "Today min's temperature: " + weatherData.main.temp_min + " °C";
     document.getElementById("humidity").textContent = "Humidity: " + weatherData.main.humidity ;
-    document.getElementById("wind-speed").textContent = "Wind Speed: " + weatherData.wind.speed + "kmh" ;
+    document.getElementById("wind-speed").textContent = "Wind Speed: " + weatherData.wind.speed + "km/h" ;
     const accessKey = '-WFVVUIMTTlYcPJAe_fMf8OHQlIxuIdvEWmCQnloVAk'; 
-    const query = `${cityName}`;
+    const query = `${cityName}+ impressionism`;
 
 
 const apiImage = `https://api.unsplash.com/search/photos?query=${query}&w=1920&h=1080`;
