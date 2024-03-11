@@ -35,6 +35,8 @@ input {
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    margin-left:5em;
+    margin-top: 0.5em;
 }
 
 #search-bar:hover {

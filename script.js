@@ -35,7 +35,8 @@ fetch(apiCoordinates)
     return response.json();
   })
   .then(weatherData => {
-    document.getElementById("descr").textContent = weatherData.weather[0].description.charAt(0).toUpperCase() + weatherData.weather[0].description.slice(1);  ;
+    console.log(weatherData) ;
+    document.getElementById("descr").textContent = weatherData.weather[0].main.charAt(0).toUpperCase() + weatherData.weather[0].main.slice(1);  ;
     document.getElementById("temperature").textContent =  weatherData.main.temp + " °C" ;
     document.getElementById("country").textContent = weatherData.sys.country ;
     document.getElementById("temp-max").textContent = "Today max's temperature: " + weatherData.main.temp_max + " °C" ;
@@ -43,10 +44,27 @@ fetch(apiCoordinates)
     document.getElementById("humidity").textContent = "Humidity: " + weatherData.main.humidity + " %";
     document.getElementById("wind-speed").textContent = "Wind Speed: " + weatherData.wind.speed + "km/h" ;
     
-    const flagContainer = document.getElementById("flag-container");
     const flag = weatherData.sys.country ;
+    const flagContainer = document.getElementById("flag-container");
     flagContainer.className = "";
     flagContainer.classList.add("flag-icon", `flag-icon-${flag.toLowerCase()}`)
+
+    
+    function selectAudio(weather){
+    switch(weatherAudio.toLowerCase()) {
+      case "rain":  return "assets/rain.mp3";
+      case "clear": return "assets/clear.mp3";
+      case "clouds": return "assets/clouds.mp3";
+      case "mist": return "assets/mist.mp3";
+      case "snow": return "assets/snow.mp3"
+    }
+    }
+
+    const weatherAudio = weatherData.weather[0].main.toLowerCase() ;
+    const audioElement = document.getElementById("weather-audio");
+    const audioSource = selectAudio(weatherAudio) ;
+    audioElement.removeAttribute('controls') ;
+    audioElement.src = audioSource ;
     
     const accessKey = '-WFVVUIMTTlYcPJAe_fMf8OHQlIxuIdvEWmCQnloVAk'; 
     const query = `${cityName}`;
