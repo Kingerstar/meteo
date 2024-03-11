@@ -1,14 +1,39 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Titre de la page</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Weather Viewer</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-  ...
-  <!-- Le reste du contenu -->
-  ...
+    <header>
+        <h1>Past Weather Viewer</h1>
+        <p>Discover the weather of the past with our super tool!</p>
+    </header>
+    <main>
+      
+      <div class="localization">
+          <span id="country"></span>
+      </div>
+
+      <input type="text" id="cityInput" placeholder="Entrez le nom d'une ville...">
+      <button id="searchButton">Rechercher</button>
+
+    <div class="weather-card">
+            <div class="temperature">
+                <span id="temperature"></span><br>
+                <span id="temp-min"></span>
+                <span id="temp-max"></span>
+                <span id="wind-speed"></span>
+                <span id="descr"></span>
+            </div>
+            <div class="humidity">
+            <span id="humidity"></span>
+         </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script> 
 </body>
 </html>
