@@ -1,9 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-  const cityInput = document.getElementById('cityInput');
-  const searchButton = document.getElementById('searchButton');
+  const cityInput = document.getElementById('city-input');
+  const searchButton = document.getElementById('search-bar');
+  const weatherCard = document.querySelector('.weather-card');
+  const headerHover = document.querySelector('.before-api') ;
 
 searchButton.addEventListener('click',function(){
+  weatherCard.classList.add('hovered') ;
+  headerHover.classList.remove('before-api')
 
 const cityName = cityInput.value ;
 if(cityName !== "") {
@@ -36,13 +40,17 @@ fetch(apiCoordinates)
     document.getElementById("country").textContent = weatherData.sys.country ;
     document.getElementById("temp-max").textContent = "Today max's temperature: " + weatherData.main.temp_max + " °C" ;
     document.getElementById("temp-min").textContent=  "Today min's temperature: " + weatherData.main.temp_min + " °C";
-    document.getElementById("humidity").textContent = "Humidity: " + weatherData.main.humidity ;
+    document.getElementById("humidity").textContent = "Humidity: " + weatherData.main.humidity + " %";
     document.getElementById("wind-speed").textContent = "Wind Speed: " + weatherData.wind.speed + "km/h" ;
+    
+    const flagContainer = document.getElementById("flag-container");
+    const flag = weatherData.sys.country ;
+    flagContainer.className = "";
+    flagContainer.classList.add("flag-icon", `flag-icon-${flag.toLowerCase()}`)
+    
     const accessKey = '-WFVVUIMTTlYcPJAe_fMf8OHQlIxuIdvEWmCQnloVAk'; 
-    const query = `${cityName}+ impressionism`;
-
-
-const apiImage = `https://api.unsplash.com/search/photos?query=${query}&w=1920&h=1080`;
+    const query = `${cityName}`;
+    const apiImage = `https://api.unsplash.com/search/photos?query=${query}&w=1920&h=1080`;
 
 
 fetch(apiImage, {
@@ -55,10 +63,10 @@ fetch(apiImage, {
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
+  ""
   return response.json();
 })
 .then(data => {
-  console.log(data.results)
   const random = Math.floor(Math.random() * 10) ;
   const img = data.results[random].urls.regular;
   const myImage = document.getElementById("img");

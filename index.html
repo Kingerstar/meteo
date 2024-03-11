@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Weather Viewer</title>
     <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
 </head>
 <body>
   <div id="img">
-    <header>
+    <header class="before-api">
         <h1>Weather view</h1>
         <p>Discover the weather with our super app !</p>
     </header>
     <main>
-      
-
-      <input type="text" id="cityInput" placeholder="Name a city..."> <div id="country">
+      <div class="search">
+      <input type="text" id="city-input" placeholder="Name a city...">     
+       <div><span id="country"></span> <span id="flag-container"></span>
+      <button id="search-bar">Search</button>
       </div>
-      <button id="searchButton">Search</button>
-
     <div class="weather-card">
             <div class="temperature">
                 <h3 id="temperature"></h3>
                 <p id="temp-min"></p>
                 <p id="temp-max"></p>
                 <p id="wind-speed"></p>
+              </div>
+              <div class="humidity">
+                <p id="humidity"></p>
                 <p id="descr"></p>
-            </div>
-            <div class="humidity">
-            <p id="humidity"></p>
          </div>
       </div>
     </main>
