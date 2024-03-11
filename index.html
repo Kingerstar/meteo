@@ -7,33 +7,32 @@
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
+  <div id="img">
     <header>
-        <h1>Past Weather Viewer</h1>
-        <p>Discover the weather of the past with our super tool!</p>
+        <h1>Weather view</h1>
+        <p>Discover the weather with our super app !</p>
     </header>
     <main>
       
-      <div class="localization">
-          <span id="country"></span>
-      </div>
 
-      <input type="text" id="cityInput" placeholder="Entrez le nom d'une ville...">
+      <input type="text" id="cityInput" placeholder="Entrez le nom d'une ville..."> <div id="country">
+      </div>
       <button id="searchButton">Rechercher</button>
 
     <div class="weather-card">
             <div class="temperature">
-                <span id="temperature"></span><br>
-                <span id="temp-min"></span>
-                <span id="temp-max"></span>
-                <span id="wind-speed"></span>
-                <span id="descr"></span>
+                <p id="temperature"></p><br>
+                <p id="temp-min"></p>
+                <p id="temp-max"></p>
+                <p id="wind-speed"></p>
+                <p id="descr"></p>
             </div>
             <div class="humidity">
-            <span id="humidity"></span>
+            <p id="humidity"></p>
          </div>
       </div>
     </main>
-
+</div>
     <script src="script.js"></script> 
 </body>
 </html>

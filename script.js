@@ -38,17 +38,39 @@ fetch(apiCoordinates)
     document.getElementById("temp-min").textContent=  "Today min's temperature" + weatherData.main.temp_min + " °C";
     document.getElementById("humidity").textContent = "Humidity: " + weatherData.main.humidity ;
     document.getElementById("wind-speed").textContent = "Wind Speed: " + weatherData.wind.speed + "kmh" ;
+    const accessKey = '-WFVVUIMTTlYcPJAe_fMf8OHQlIxuIdvEWmCQnloVAk'; 
+    const query = `${cityName}`;
+
+
+const apiImage = `https://api.unsplash.com/search/photos?query=${query}&w=1920&h=1080`;
+
+
+fetch(apiImage, {
+  headers: {
+    Authorization: `Client-ID ${accessKey}`,
+    'Accept-Version': 'v1',
+  }
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+  console.log(data.results)
+  const random = Math.floor(Math.random() * 10) ;
+  const img = data.results[random].urls.regular;
+  const myImage = document.getElementById("img");
+  myImage.style.backgroundImage = `url(${img})`;
+  
+})
   })
 
   .catch(error => {
     console.error('An error as occured', error);
   });
 
-
-
-
-const localizationInput = document.getElementById("localization") ; 
-const temperatureInput = document.getElementById("temperature") ;
 }
 })
 }) ;
