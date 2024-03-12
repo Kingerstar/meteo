@@ -4,7 +4,7 @@ Chill Weather is a simple web application that provides both soothing background
 
 ## Features
 
-- **Soothing Background Music**: Enjoy the gentle melodies of Chill Weather's curated playlist as you check the weather forecast and unwind.
+- **Change the city and the song**: You can simply change the music and the city by modifying one file.
 - **Weather Forecast**: Stay informed about the current weather conditions, including temperature, humidity, wind speed, and more.
 - **Autoplay**: The music starts playing automatically when you choose a city, so you can sit back and enjoy the chill vibes right away.
 ## Usage
